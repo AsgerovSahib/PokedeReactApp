@@ -2,15 +2,17 @@ import React from "react";
 import styles from "./PokeCard.module.css";
 
 export const PokeCard = (props) => {
-  pokemmonIMG = (id) => {
+  const pokemonIMG = (id) => {
     const newID = id.toString();
     let resultID = id;
     if (newID.length == 1) {
       resultID = "00" + id;
     }
-    if ((newID.length = 2)) {
-      resultID = "00" + id;
+
+    if (newID.length == 2) {
+      resultID = "0" + id;
     }
+
     return resultID;
   };
 
@@ -22,8 +24,8 @@ export const PokeCard = (props) => {
           props.id
         )}.png`}
       />
-      <p className={styles.card_info}> type: {props.type}</p>
-      <p className={styles.card_info}> EXP {props.base_experience}</p>
+      <p className={styles.card_info}>Type: {props.type}</p>
+      <p className={styles.card_info}>EXP {props.base_experience}</p>
     </div>
   );
 };
